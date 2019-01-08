@@ -1,0 +1,61 @@
+<section>
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input
+        type="email"
+        matInput
+        placeholder="Your email"
+        formControlName="email">
+      <mat-hint>Please enter a valid email.</mat-hint>
+      <mat-error>Invalid or missing email.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="password"
+        matInput
+        placeholder="Your password"
+        formControlName="password">
+      <mat-hint>Please enter your password.</mat-hint>
+      <mat-error>Missing password.</mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+  </form>
+</section>
+
+
+<!-- <section id="signup-form">
+  <form fxLayout="column" fxLayoutAlign="center center" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <mat-form-field>
+      <input
+        type="email"
+        matInput
+        ngModel
+        name="email"
+        placeholder="Please enter a valid email."
+        required
+        email
+        #emailInput="ngModel"
+      >
+      <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="password"
+        matInput
+        ngModel
+        name="password"
+        placeholder="Please enter your password."
+        required
+        #pwInput="ngModel"
+      >
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" class="signup-button" [disabled]="form.invalid">Login</button>
+  </form>
+</section>
+ -->
